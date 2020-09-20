@@ -243,5 +243,9 @@ module.exports = {
         return moment(timestamp).format('lll');
       }
     },
-  ]
+  ],
+  markdown: {
+    extendMarkdown: md => {
+    }
+  }
 }

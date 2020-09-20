@@ -5,10 +5,12 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
+    <!-- 导航栏 -->
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
 
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
+    <!-- 侧边栏 -->
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <template #top>
         <slot name="sidebar-top" />
@@ -20,6 +22,7 @@
 
     <Home v-if="$page.frontmatter.home" />
 
+    <!-- 页面主体 -->
     <Page v-else :sidebar-items="sidebarItems">
       <template #top>
         <slot name="page-top" />
@@ -29,7 +32,8 @@
       </template>
     </Page>
 
-    <PageToc :tocItems="tocItems" />
+    <!-- 页面标题 -->
+    <PageToc v-if="!$page.frontmatter.home" :tocItems="tocItems" />
   </div>
 </template>
 

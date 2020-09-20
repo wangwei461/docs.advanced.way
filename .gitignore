@@ -5,6 +5,7 @@ npm-debug.log
 coverage/
 run
 dist
+.idea
 .DS_Store
 .nyc_output
 .basement
