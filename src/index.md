@@ -18,7 +18,9 @@ actionLink: /java/base/object
 
 该文档库基于 `Vuepress` 构建而成，文档内容在 src 文件夹内，格式为 Markdown
 
-基于 `GitHub Pages` 生成静态站点 `https://wangwei461.github.io/docs.advanced.way`
+基于 `GitHub Pages` 生成静态站点 [https://wangwei461.github.io/docs.advanced.way](https://wangwei461.github.io/docs.advanced.way/)  
+
+基于 `Gitee Pages` 生成静态站点 [https://ww2862379252.gitee.io/docs.advanced.way](https://ww2862379252.gitee.io/docs.advanced.way/)
 
 ### 🔨 开发/部署
 
