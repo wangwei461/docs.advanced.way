@@ -10,14 +10,14 @@ brew install git
 ```
 #####b.  [官网下载](https://git-scm.com/downloads)   
 
-![](../../resources/git/Jietu20180714-085751@2x.jpg)
+![](../resources/git/Jietu20180714-085751@2x.jpg)
 #### 2. 是否安装成功  
 打开终端输入命令  
 ```shell
 git -version
 ```
 结果如下：  
-![](../../resources/git/Jietu20180714-090053@2x.jpg)  
+![](../resources/git/Jietu20180714-090053@2x.jpg)  
 
 #### 3.基本设置  
 ```shell
@@ -41,33 +41,35 @@ git remote add origin https://git.coding.net/iznish/test.git
 ## https://git.coding.net/iznish/test.git 为远程仓库地址
 git pull origin master ## 远程仓库同步到本地
 ```
-![](../../resources/git/Jietu20180714-094041.jpg)  
+![](../resources/git/Jietu20180714-094041.jpg)  
 #### 3. 首次提交
 ```shell
 git add readme.txt ##添加单个文件
 git commit  -m "首次提交"
 ```
-![](../../resources/git/Jietu20180714-094512.jpg) 
+![](../resources/git/Jietu20180714-094512.jpg) 
 #### 4.本地推送
 ```shell
 git push origin master ## 本地推送到远程仓库
 ```
-![](../../resources/git/Jietu20180714-094747.jpg) 
+![](../resources/git/Jietu20180714-094747.jpg) 
 #### 5. 文件比较 
 ```shell
 git deff readme.txt # 文件变更明细
 ```
-![](../../resources/git/Jietu20180714-095216.jpg) 
+![](../resources/git/Jietu20180714-095216.jpg) 
 ### B、从远程仓库克隆
 ```shell
 git clone https://git.coding.net/iznish/test.git test #test 为目录
 ```
 ## 文件操作
 #### 撤销修改
+
 ```shell
 git checkout -- readme.txt ## 将文件回退到最近一次commit状态
 ```
 #### 删除文件
+
 ```shell
 git rm test.txt
 git commit -m "删除test.txt"
@@ -84,7 +86,7 @@ Git的版本库里存了很多东西，其中最重要的就是称为stage（或
 >HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。
 >一开始的时候，master分支是一条线，Git用master指向最新的提交，再用HEAD指向master，就能确定当前分支，以及当前分支的提交点
 >
->![](../../resources/git/0.png)
+>![](../resources/git/0.png)
 >
 > 
 
@@ -96,8 +98,10 @@ git branch frist_branch
 ```shell
 git branch
 ```
-![](../../resources/git/Jietu20180714-102739.jpg) 
+![](../resources/git/Jietu20180714-102739.jpg) 
+
 #### 切换分支
+
 ```shell
 git checkout frist_branch
 ```
@@ -127,7 +131,7 @@ git branch -d frist_branch
 ```shell
 git remote -v
 ```
-![](../../resources/git/Jietu20180714-104224.jpg) 
+![](../resources/git/Jietu20180714-104224.jpg) 
 >没有push 权限，看不到push 链接
 
 #### 分支获取
@@ -135,13 +139,14 @@ git remote -v
 git clone https://git.coding.net/iznish/test.git
 git checkout -b frist_branch  origin/frist_branch
 ```
-![](../../resources/git/Jietu20180714-103747.jpg) 
+![](../resources/git/Jietu20180714-103747.jpg) 
 ## 标签管理
 ```shell
 git tag v.1.0.1
 ```
 
 ## 配置git
+
 #### 配置 .gitignore
 >忽略文件的原则是：  
 >忽略操作系统自动生成的文件，比如缩略图等；  
