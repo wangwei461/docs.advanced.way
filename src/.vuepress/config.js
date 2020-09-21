@@ -32,9 +32,7 @@ module.exports = {
   themeConfig: {
     repo: 'https://github.com/wangwei461/docs.advanced.way.git',
     editLinks: true,
-    docsDir: 'src',
     editLinkText: '在 GitHub 编辑此页',
-    navbar: true,
     displayAllHeaders: true,
     smoothScroll: true,
     search: true,
@@ -49,18 +47,46 @@ module.exports = {
       {
         text: '框架',
         items: [
-          { text: 'Spring', link: '/framwork/spring/' },
-          { text: 'Spring-mvc', link: '/framwork/springmvc/' },
-          { text: 'SpringBoot', link: '/framwork/springboot/' },
-          { text: 'Mybatis', link: '/framwork/mybatis/' },
-          { text: 'Mybatis-plus', link: '/framwork/mybatis-plus/' },
+          { text: 'Spring', link: '/framework/spring/' },
+          { text: 'Spring MVC', link: '/framework/springmvc/' },
+          { text: 'Spring Boot', link: '/framework/springboot/' },
+          { text: 'Mybatis', link: '/framework/mybatis/' },
+          { text: 'Mybatis Plus', link: '/framework/mybatis-plus/' },
         ]
       },
       {
         text: '分布式/架构',
         items: [
-          { text: '架构设计', link: '/architecture/' },
-          { text: 'SpringCloud', link: '/distributed/springcloud/' },
+          {
+            text: '架构师之路',
+            items: [
+              {
+                text: '架构设计',
+                link: '/architecture/'
+              },
+              {
+                text: '开发模式',
+                link: '/dev'
+              },
+              {
+                text: '集群',
+                link: '/cluster'
+              }
+            ]
+          },
+          {
+            text: '分布式',
+            items: [
+              {
+                text: '事务',
+                link: '/distributed/tranctional/'
+              },
+              {
+                text: 'SpringCloud',
+                link: '/distributed/springcloud/'
+              }
+            ],
+          },
         ]
       },
       {
@@ -74,7 +100,7 @@ module.exports = {
       {
         text: '编码实践',
         items: [
-          { text: '算法', link: '/algorithm/' },
+          { text: '算法/数据结构', link: '/algorithm/' },
           { text: '设计模式', link: '/patterns/' },
         ]
       },
@@ -82,51 +108,56 @@ module.exports = {
     sidebar: {
       '/java/': [{
         title: '基础内容',
-        collapsable: true,
         children: [
           'base/object',
+          'base/lambda',
           'base/io',
+          'base/nio',
+          'base/代理',
+          'base/函数式接口',
         ]
       },
       {
         title: '集合',
-        collapsable: true,
         children: [
-          'hc/thread',
         ]
       },
       {
         title: '高并发',
-        collapsable: true,
         children: [
-          'hc/thread',
+          'hc/多线程',
+          'hc/并发编程的艺术',
+          'hc/高并发',
         ]
       },
       {
         title: 'JVM',
-        collapsable: true,
         children: [
-          'jvm/class',
+          'jvm/对象创建过程',
+          'jvm/对象回收机制',
+          'jvm/jvm参数',
         ]
       }],
       '/linux/': [
         {
           title: '常用命令',
-          collapsable: true,
           children: [
-            'command/',
+            'command/crontab',
+            'command/Linux',
+            'command/linux常用命令',
+            'command/常用命令',
+            'command/ubuntu',
+            'command/lvm',
           ]
         },
         {
           title: 'Shell脚本',
-          collapsable: true,
           children: [
             'shell/',
           ]
         },
         {
           title: '内核',
-          collapsable: true,
           children: [
             'kernel/',
           ]
@@ -135,68 +166,82 @@ module.exports = {
       '/db/': [
         {
           title: 'SQL',
-          collapsable: true,
           children: [
             'sql/',
+          ]
+        },
+        {
+          title: 'Mysql',
+          children: [
+            'mysql/mysql',
+            'mysql/数据类型',
+            'mysql/数据库索引',
+            'mysql/InnoDB',
+            'mysql/复制',
+            'mysql/性能优化',
           ]
         },
       ],
       '/cache/': [
         {
           title: 'Redis',
-          collapsable: true,
           children: [
-            'redis/',
+            'redis/概述',
+            'redis/数据类型',
+            'redis/数据结构',
+            'redis/持久化',
+            'redis/事件',
+            'redis/事务',
+            'redis/Sentinel',
           ]
         },
         {
           title: 'Redisson',
-          collapsable: true,
           children: [
             'redisson/',
           ]
         }
       ],
-      '/framwork/spring/': [
+      '/framework/spring/': [
+        {
+          title: 'Spring',
+          children: [
+            'aop',
+            'core',
+            'overview',
+            'spring源码分析',
+            'spring源码编译',
+            '事务管理',
+          ]
+        }
+      ],
+      '/framework/springboot/': [
         {
           title: 'spring',
-          collapsable: true,
           children: [
             '',
           ]
         }
       ],
-      '/framwork/springboot/': [
+      '/framework/mybatis/': [
         {
           title: 'spring',
-          collapsable: true,
           children: [
             '',
           ]
         }
       ],
-      '/framwork/mybatis/': [
+      '/framework/mybatis-plus/': [
         {
           title: 'spring',
-          collapsable: true,
           children: [
             '',
           ]
         }
       ],
-      '/framwork/mybatis-plus/': [
+      '/framework/springmvc/': [
         {
           title: 'spring',
-          collapsable: true,
-          children: [
-            '',
-          ]
-        }
-      ],
-      '/framwork/springmvc/': [
-        {
-          title: 'spring',
-          collapsable: true,
           children: [
             '',
           ]
@@ -205,7 +250,6 @@ module.exports = {
       '/architecture/': [
         {
           title: '基础理论',
-          collapsable: true,
           children: [
             '',
           ]
@@ -214,14 +258,12 @@ module.exports = {
       '/algorithm/': [
         {
           title: '算法',
-          collapsable: true,
           children: [
             'algorithm/',
           ]
         },
         {
           title: 'leetcode',
-          collapsable: true,
           children: [
             'leetcode/',
           ]
