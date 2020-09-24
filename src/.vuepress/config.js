@@ -110,6 +110,8 @@ module.exports = {
         title: '基础内容',
         children: [
           'base/object',
+          'base/关键字',
+          'base/数据类型',
           'base/lambda',
           'base/io',
           'base/nio',
@@ -120,6 +122,9 @@ module.exports = {
       {
         title: '集合',
         children: [
+          "collection/Collection",
+          "collection/List",
+          "collection/Map",
         ]
       },
       {
