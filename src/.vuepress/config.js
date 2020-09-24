@@ -268,12 +268,59 @@ module.exports = {
           ]
         },
         {
+          title: '数据结构',
+          children: [
+            'structure/tree/树',
+            'structure/queue/队列',
+          ]
+        },
+        {
           title: 'leetcode',
           children: [
             'leetcode/',
           ]
         }
       ],
+      '/patterns/': [
+        {
+          title: '创建型模式',
+          children: [
+            'build/单利模式',
+            'build/工厂方法模式',
+            'build/抽象工厂模式',
+            'build/建造者模式',
+            'build/原型模式',
+          ]
+        },
+        {
+          title: '结构型模式',
+          children: [
+            'structured/亨元模式',
+            'structured/代理模式',
+            'structured/外观模式',
+            'structured/桥接模式',
+            'structured/组合模式',
+            'structured/装饰模式',
+            'structured/适配器模式',
+          ]
+        },
+        {
+          title: '行为型模式',
+          children: [
+            'behavior/中介者模式',
+            'behavior/命令模式',
+            'behavior/备忘录模式',
+            'behavior/模板方法模式',
+            'behavior/状态模式',
+            'behavior/策略模式',
+            'behavior/职责链模式',
+            'behavior/观察者模式',
+            'behavior/解释器模式',
+            'behavior/访问者模式',
+            'behavior/迭代器模式',
+          ]
+        },
+      ]
     }
   },
 
