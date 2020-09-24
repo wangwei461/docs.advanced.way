@@ -21,7 +21,18 @@ export default {
 
 <style lang="stylus">
 .page {
+  padding-bottom: 2rem;
+  display: block;
   padding-left: $sidebarWidth;
   padding-right: $tocSidebarWidth;
+}
+
+@media (max-width: $MQMobile) {
+  .page {
+    padding-bottom: 2rem;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 </style>

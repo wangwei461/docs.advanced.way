@@ -4,6 +4,38 @@ title: 'Map'
 
 ## Map.class
 
+HashMap是Map接口基于哈希表的实现。
+这种实现提供了所有可选的Map操作，并允许key和value为null（除了HashMap是unsynchronized的和允许使用null外，HashMap和HashTable大致相同。）。
+
+不保证映射的顺序，特别是它不保证该顺序恒久不变。
+
+此实现假设哈希函数在桶内适当地分布元素，为基本实现(get 和 put)提供了稳定的性能。迭代 collection 视图所需的时间与 HashMap 实例的“容量”（桶的数量）及其大小（键-值映射关系数）成比例。如果遍历操作很重要，就不要把初始化容量initial capacity设置得太高（或将加载因子load factor设置得太低），否则会严重降低遍历的效率。
+
+HashMap有两个影响性能的重要参数：初始化容量 `initial capacity` 、加载因子 `load factor`。
+* 容量是哈希表中桶的数量，初始容量只是哈希表在创建时的容量。
+* 加载因子是哈希表在其容量自动增加之前可以达到多满的一种尺度。
+
+initial capacity * load factor 就是当前允许的最大元素数目，超过initial capacity*load factor之后，HashMap就会进行rehashed操作来进行扩容，扩容后的的容量为之前的两倍。
+
+通常，默认加载因子 (0.75) 在时间和空间成本上寻求一种折衷。加载因子过高虽然减少了空间开销，但同时也增加了查询成本（在大多数 HashMap类的操作中，包括 get 和 put 操作，都反映了这一点）。
+
+在设置初始容量时应该考虑到映射中所需的条目数及其加载因子，以便最大限度地减少rehash操作次数。如果初始容量大于最大条目数除以加载因子，则不会发生rehash 操作。
+
+如果很多映射关系要存储在 HashMap 实例中，则相对于按需执行自动的 rehash 操作以增大表的容量来说，使用足够大的初始容量创建它将使得映射关系能更有效地存储。
+注意，此实现不是同步的。如果多个线程同时访问一个哈希映射，而其中至少一个线程从结构上修改了该映射，则它必须保持外部同步。（结构上的修改是指添加或删除一个或多个映射关系的任何操作；仅改变与实例已经包含的键关联的值不是结构上的修改。）这一般通过对自然封装该映射的对象进行同步操作来完成。
+
+如果不存在这样的对象，则应该使用 Collections.synchronizedMap 方法来“包装”该映射。最好在创建时完成这一操作，以防止对映射进行意外的非同步访问，
+如下所示： 
+Map m = Collections.synchronizedMap(new HashMap(…));
+
+由所有此类的“collection 视图方法”所返回的迭代器都是fail-fast 的：在迭代器创建之后，如果从结构上对映射进行修改，除非通过迭代器本身的remove方法，其他任何时间任何方式的修改，迭代器都将抛出 ConcurrentModificationException。
+
+因此，面对并发的修改，迭代器很快就会完全失败，而不冒在将来不确定的时间发生任意不确定行为的风险。
+
+注意，迭代器的快速失败行为不能得到保证，一般来说，存在非同步的并发修改时，不可能作出任何坚决的保证。快速失败迭代器尽最大努力抛出 ConcurrentModificationException。
+
+因此，编写依赖于此异常的程序的做法是错误的，正确做法是：迭代器的快速失败行为应该仅用于检测bug。
+
 ```java
 public interface Map<K, V> {
     int size();
@@ -527,6 +559,32 @@ if ((p = tab[i = (n - 1) & hash]) == null)
 
 这就导致了线程B插入的数据被线程A覆盖了，从而线程不安全
 
+
+## LinkedHashMap.class
+
+* LinkedHashMap是继承于HashMap，是基于HashMap和双向链表来实现的。
+* HashMap无序；LinkedHashMap有序，可分为插入顺序（先进先出）和访问顺序（最近最少）两种。    
+如果是访问顺序，那put和get操作已存在的Entry时，都会把Entry移动到双向链表的表尾(其实是先删除再插入)。
+* LinkedHashMap存取数据，还是跟HashMap一样使用的Entry[]的方式，双向链表只是为了保证顺序。
+* LinkedHashMap是线程不安全的。
+
+### 架构图
+
+![](../../resources/java/collection/LinkedHashMap.png)
+
+### 源码
+
+```java
+public class LinkedHashMap<K,V>
+    extends HashMap<K,V>
+    implements Map<K,V>
+{
+    transient LinkedHashMap.Entry<K,V> head;
+    transient LinkedHashMap.Entry<K,V> tail;
+    // 表示迭代顺序，true表示访问顺序，false表示插入顺序
+    final boolean accessOrder;
+}
+```
 
 ## 参考内容
 [Java8 HashMap详解](https://www.cnblogs.com/myseries/p/10876828.html)

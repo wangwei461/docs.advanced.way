@@ -81,4 +81,8 @@ export default {
     }
   }
 }
+
+@media (max-width: $MQMobile)
+  .tocSidebar
+    display:none
 </style>
