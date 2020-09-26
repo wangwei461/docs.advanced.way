@@ -292,8 +292,7 @@ module.exports = {
           title: '创建型模式',
           children: [
             'build/单利模式',
-            'build/工厂方法模式',
-            'build/抽象工厂模式',
+            'build/工厂模式',
             'build/建造者模式',
             'build/原型模式',
           ]
