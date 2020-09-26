@@ -283,6 +283,12 @@ module.exports = {
       ],
       '/patterns/': [
         {
+          title: '设计模式',
+          children: [
+            'other/设计模式原则',
+          ]
+        },
+        {
           title: '创建型模式',
           children: [
             'build/单利模式',
