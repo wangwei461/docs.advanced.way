@@ -117,6 +117,7 @@ module.exports = {
           'base/nio',
           'base/代理',
           'base/函数式接口',
+          'base/String',
         ]
       },
       {
