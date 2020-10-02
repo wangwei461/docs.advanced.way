@@ -45,13 +45,10 @@ module.exports = {
         link: '/java/',
       },
       {
-        text: '框架',
+        text: '常用框架',
         items: [
-          { text: 'Spring', link: '/framework/spring/' },
-          { text: 'Spring MVC', link: '/framework/springmvc/' },
-          { text: 'Spring Boot', link: '/framework/springboot/' },
-          { text: 'Mybatis', link: '/framework/mybatis/' },
-          { text: 'Mybatis Plus', link: '/framework/mybatis-plus/' },
+          { text: 'Spring', link: '/framework/Spring/' },
+          { text: 'Mybatis', link: '/framework/Mybatis/' },
         ]
       },
       {
@@ -215,46 +212,42 @@ module.exports = {
           ]
         }
       ],
-      '/framework/spring/': [
+      '/framework/Spring/': [
         {
           title: 'Spring',
           children: [
-            'aop',
-            'core',
-            'overview',
-            'spring源码分析',
-            'spring源码编译',
-            '事务管理',
+            'spring/IOC',
+            'spring/AOP',
+            'spring/core',
+            'spring/spring源码分析',
+            'spring/事务管理',
           ]
-        }
-      ],
-      '/framework/springboot/': [
+        },
         {
-          title: 'spring',
+          title: 'Spring MVC',
+          children: [
+            ''
+          ]
+        },
+        {
+          title: 'Spring Boot',
+          children: [
+            'springboot/简介',
+            'springboot/起步依赖',
+            'springboot/自动配置',
+            'springboot/spi',
+          ]
+        },
+      ],
+      '/framework/Mybatis/': [
+        {
+          title: 'Mybatis',
           children: [
             '',
           ]
-        }
-      ],
-      '/framework/mybatis/': [
+        },
         {
-          title: 'spring',
-          children: [
-            '',
-          ]
-        }
-      ],
-      '/framework/mybatis-plus/': [
-        {
-          title: 'spring',
-          children: [
-            '',
-          ]
-        }
-      ],
-      '/framework/springmvc/': [
-        {
-          title: 'spring',
+          title: 'Mybatis Plus',
           children: [
             '',
           ]
