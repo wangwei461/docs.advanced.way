@@ -118,6 +118,7 @@ module.exports = {
           'base/代理',
           'base/函数式接口',
           'base/String',
+          'base/Reference',
         ]
       },
       {
