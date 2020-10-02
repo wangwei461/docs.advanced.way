@@ -154,7 +154,6 @@ module.exports = {
           title: 'Linux',
           children: [
             'command/常用命令',
-            'command/ubuntu',
             'command/lvm',
           ]
         },
