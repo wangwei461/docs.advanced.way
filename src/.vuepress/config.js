@@ -31,7 +31,7 @@ module.exports = {
    */
   themeConfig: {
     repo: 'https://github.com/wangwei461/docs.advanced.way.git',
-    editLinks: true,
+    editLinks: false,
     editLinkText: '在 GitHub 编辑此页',
     displayAllHeaders: true,
     smoothScroll: true,
@@ -114,6 +114,7 @@ module.exports = {
           'base/nio',
           'base/代理',
           'base/函数式接口',
+          'base/反射',
           'base/String',
           'base/Reference',
         ]
@@ -150,26 +151,31 @@ module.exports = {
       }],
       '/linux/': [
         {
-          title: '常用命令',
+          title: 'Linux',
           children: [
-            'command/crontab',
-            'command/Linux',
-            'command/linux常用命令',
             'command/常用命令',
             'command/ubuntu',
             'command/lvm',
           ]
         },
         {
-          title: 'Shell脚本',
+          title: 'Shell编程',
           children: [
-            'shell/',
+            'shell/Shell',
           ]
         },
         {
           title: '内核',
           children: [
             'kernel/',
+          ]
+        },
+        {
+          title: '容器',
+          children: [
+            'docker/镜像',
+            'docker/Dockerfile',
+            'docker/Compose',
           ]
         }
       ],
@@ -249,6 +255,8 @@ module.exports = {
             'mybatis/映射器',
             'mybatis/动态 SQL',
             'mybatis/Cache',
+            'mybatis/插件',
+            'mybatis/springboot_mybatis',
           ]
         },
         {
