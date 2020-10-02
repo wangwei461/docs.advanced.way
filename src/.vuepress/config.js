@@ -35,9 +35,9 @@ module.exports = {
     editLinkText: '在 GitHub 编辑此页',
     displayAllHeaders: true,
     smoothScroll: true,
-    search: true,
+    search: false,
     sidebarDepth: 0,
-    lastUpdated: true,
+    lastUpdated: false,
     lastUpdated: '最后更新时间',
     nav: [
       {
@@ -243,13 +243,16 @@ module.exports = {
         {
           title: 'Mybatis',
           children: [
-            '',
+            'mybatis/入门',
+            'mybatis/核心组件',
+            'mybatis/配置',
+            'mybatis/动态 SQL',
           ]
         },
         {
           title: 'Mybatis Plus',
           children: [
-            '',
+            'mybatisplus/',
           ]
         }
       ],
