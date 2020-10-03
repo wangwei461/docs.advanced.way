@@ -175,6 +175,7 @@ module.exports = {
             'docker/镜像',
             'docker/Dockerfile',
             'docker/Compose',
+            'docker/YAML',
           ]
         }
       ],
