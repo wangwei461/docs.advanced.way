@@ -40,3 +40,94 @@ Java 是面向对象的编程语言，对象就是面向对象程序设计的核
 > 
 
 同一个行为具有不同表现形式或形态的能力
+
+## Object
+
+```java
+public class Object {
+    private static native void registerNatives();
+    static {
+        registerNatives();
+    }
+
+    @HotSpotIntrinsicCandidate
+    public Object() {}
+
+    @HotSpotIntrinsicCandidate
+    public final native Class<?> getClass();
+
+    @HotSpotIntrinsicCandidate
+    public native int hashCode();
+
+    public boolean equals(Object obj) {
+        return (this == obj);
+    }
+
+    @HotSpotIntrinsicCandidate
+    protected native Object clone() throws CloneNotSupportedException;
+
+    public String toString() {
+        return getClass().getName() + "@" + Integer.toHexString(hashCode());
+    }
+
+    @HotSpotIntrinsicCandidate
+    public final native void notify();
+
+    @HotSpotIntrinsicCandidate
+    public final native void notifyAll();
+
+    public final void wait() throws InterruptedException {
+        wait(0L);
+    }
+
+    public final native void wait(long timeoutMillis) throws InterruptedException;
+
+    public final void wait(long timeoutMillis, int nanos) throws InterruptedException {
+        if (timeoutMillis < 0) {
+            throw new IllegalArgumentException("timeoutMillis value is negative");
+        }
+
+        if (nanos < 0 || nanos > 999999) {
+            throw new IllegalArgumentException(
+                                "nanosecond timeout value out of range");
+        }
+
+        if (nanos > 0) {
+            timeoutMillis++;
+        }
+
+        wait(timeoutMillis);
+    }
+
+    @Deprecated(since="9")
+    protected void finalize() throws Throwable { }
+}
+```
+
+### @HotSpotIntrinsicCandidate
+
+被`@HotSpotIntrinsicCandidate` 标注的方法，在 `HotSpot` 中都有一套高效的实现，该高效实现基于CPU指令。运行时，`HotSpot` 维护的高效实现会替代JDK的源码实现，从而获得更高的效率
+
+### equals
+
+`==` 比较两个对象在内存中的首地址
+
+`equals()` 比较字符串中所包含的内容是否相同
+
+#### 重写 equals()
+
+当需要向集合中添加元素的时候需要重写equals方法。
+
+因为添加进集合的时候首先需要判断该集合中是否含有需要添加的元素，这个时候就要使用contains方法。contains方法内部调用equals方法
+
+### hashCode
+
+`hashCode()` 是一个native方法，用于计算出对象的一个散列值
+
+**equals相同的对象，hashCode必然相同**
+
+重写equals()方法就重写hashCode()方法
+
+String类重写了equals和hashCode方法，比较的是值
+
+重写hashcode方法为了将数据存入 HashSet/HashMap/Hashtable 类时进行比较
