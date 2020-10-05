@@ -419,9 +419,10 @@ protected HandlerAdapter getHandlerAdapter(Object handler) throws ServletExcepti
             }
         }
     }
+    
     throw new ServletException("No adapter for handler [" + handler +
             "]: The DispatcherServlet configuration needs to include a HandlerAdapter that supports this handler");
-	}
+}
 ```
 
 ### 处理Http缓存
