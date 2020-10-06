@@ -237,6 +237,7 @@ module.exports = {
             'springmvc/Servlet',
             'springmvc/Session',
             'springmvc/DispatcherServlet',
+            'springmvc/RequestMapping',
           ]
         },
         {
