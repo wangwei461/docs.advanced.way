@@ -38,7 +38,7 @@ module.exports = {
     search: false,
     sidebarDepth: 0,
     lastUpdated: false,
-    lastUpdated: '最后更新时间',
+    // lastUpdated: '最后更新时间',
     nav: [
       {
         text: 'Java',
@@ -244,13 +244,13 @@ module.exports = {
           title: 'Spring Boot',
           children: [
             'springboot/简介',
-            'springboot/基本特性',
             'springboot/起步依赖',
             'springboot/自动配置',
+            'springboot/系统指标监控',
             'springboot/spi',
             'springboot/springboot启动',
             'springboot/常用注解',
-            'springboot/系统指标监控',
+            'springboot/基本特性',
           ]
         },
       ],
@@ -359,13 +359,13 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
-    '@vuepress/last-updated',
-    {
-      transformer: (timestamp, lang) => {
-        moment.locale('zh-CN')
-        return moment(timestamp).format('lll');
-      }
-    },
+    // '@vuepress/last-updated',
+    // {
+    //   transformer: (timestamp, lang) => {
+    //     moment.locale('zh-CN')
+    //     return moment(timestamp).format('lll');
+    //   }
+    // },
   ],
   markdown: {
     extendMarkdown: md => {
