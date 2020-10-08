@@ -244,9 +244,12 @@ module.exports = {
           title: 'Spring Boot',
           children: [
             'springboot/简介',
+            'springboot/基本特性',
             'springboot/起步依赖',
             'springboot/自动配置',
             'springboot/spi',
+            'springboot/springboot启动',
+            'springboot/常用注解',
           ]
         },
       ],
