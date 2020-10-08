@@ -47,8 +47,8 @@ module.exports = {
       {
         text: '常用框架',
         items: [
-          { text: 'Spring', link: '/framework/Spring/' },
-          { text: 'Mybatis', link: '/framework/Mybatis/' },
+          { text: 'Spring', link: '/framework/spring/' },
+          { text: 'Mybatis', link: '/framework/mybatis/' },
         ]
       },
       {
@@ -206,9 +206,9 @@ module.exports = {
             'redis/数据类型',
             'redis/数据结构',
             'redis/持久化',
-            'redis/事件',
             'redis/事务',
             'redis/Sentinel',
+            'redis/常见问题',
           ]
         },
         {
@@ -218,7 +218,7 @@ module.exports = {
           ]
         }
       ],
-      '/framework/Spring/': [
+      '/framework/spring/': [
         {
           title: 'Spring',
           children: [
@@ -250,7 +250,7 @@ module.exports = {
           ]
         },
       ],
-      '/framework/Mybatis/': [
+      '/framework/mybatis/': [
         {
           title: 'Mybatis',
           children: [
