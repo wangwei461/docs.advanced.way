@@ -250,6 +250,7 @@ module.exports = {
             'springboot/spi',
             'springboot/springboot启动',
             'springboot/常用注解',
+            'springboot/系统指标监控',
           ]
         },
       ],
