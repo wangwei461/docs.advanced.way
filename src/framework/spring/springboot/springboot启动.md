@@ -739,6 +739,7 @@ public class SpringApplication {
 		}
 	}
 
+// ApplicationRunner
     private void callRunner(ApplicationRunner runner, ApplicationArguments args) {
 		try {
             // 执行 run 方法
@@ -746,6 +747,17 @@ public class SpringApplication {
 		}
 		catch (Exception ex) {
 			throw new IllegalStateException("Failed to execute ApplicationRunner", ex);
+		}
+	}
+
+// CommandLineRunner
+    private void callRunner(CommandLineRunner runner, ApplicationArguments args) {
+		try {
+            // 执行 run 方法
+			(runner).run(args.getSourceArgs());
+		}
+		catch (Exception ex) {
+			throw new IllegalStateException("Failed to execute CommandLineRunner", ex);
 		}
 	}
 }
