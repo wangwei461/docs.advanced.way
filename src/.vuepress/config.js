@@ -115,6 +115,7 @@ module.exports = {
         items: [
           { text: '算法/数据结构', link: '/algorithm/' },
           { text: '设计模式', link: '/patterns/' },
+          { text: '面试', link: '/job/' },
         ]
       },
     ],
@@ -483,6 +484,15 @@ module.exports = {
             'behavior/解释器模式',
             'behavior/访问者模式',
             'behavior/迭代器模式',
+          ]
+        },
+      ],
+      '/job/': [
+        {
+          title: 'Java开发',
+          children: [
+            'java',
+            'mybatis',
           ]
         },
       ]
