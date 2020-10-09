@@ -163,6 +163,9 @@ module.exports = {
           'jvm/对象创建过程',
           'jvm/对象回收机制',
           'jvm/jvm参数',
+          'jvm/jvm内存模型',
+          'jvm/内存优化',
+          'jvm/垃圾收集器',
         ]
       }],
       '/linux/': [
