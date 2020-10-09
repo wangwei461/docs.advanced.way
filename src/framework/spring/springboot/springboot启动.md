@@ -711,7 +711,29 @@ private void handleRunFailure(ConfigurableApplicationContext context, Throwable 
 prepareContext(context, environment, listeners, applicationArguments, printedBanner);
 refreshContext(context);
 afterRefresh(context, applicationArguments);
+
+private void refreshContext(ConfigurableApplicationContext context) {
+	refresh((ApplicationContext) context);
+	if (this.registerShutdownHook) {
+		try {
+			context.registerShutdownHook();
+		}
+		catch (AccessControlException ex) {
+			// Not allowed in some environments.
+		}
+	}
+}
+
+protected void refresh(ApplicationContext applicationContext) {
+	Assert.isInstanceOf(ConfigurableApplicationContext.class, applicationContext);
+	refresh((ConfigurableApplicationContext) applicationContext);
+}
+
+protected void refresh(ConfigurableApplicationContext applicationContext) {
+	applicationContext.refresh();
+}
 ```
+
 
 ## 启动 Runner
 
