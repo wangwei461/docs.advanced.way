@@ -9,7 +9,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
-  description: "进阶之路",
+  description: "架构师",
   port: 3000,
   dest: "dist",
   base: '/docs.advanced.way/',
@@ -81,9 +81,24 @@ module.exports = {
               {
                 text: 'SpringCloud',
                 link: '/distributed/springcloud/'
+              },
+              {
+                text: '服务网格',
+                link: '/distributed/servicemesh/'
+              },
+              {
+                text: '消息队列',
+                link: '/distributed/mq/'
               }
             ],
           },
+        ]
+      },
+      {
+        text: '云原生',
+        items: [
+          { text: 'Docker容器', link: '/cloud/docker/' },
+          { text: 'Kubernetes', link: '/cloud/k8s/' },
         ]
       },
       {
@@ -92,6 +107,7 @@ module.exports = {
           { text: 'Linux', link: '/linux/' },
           { text: '缓存', link: '/cache/' },
           { text: '数据库', link: '/db/' },
+          { text: '计算机系统', link: '/cs/' },
         ]
       },
       {
@@ -169,13 +185,27 @@ module.exports = {
             'kernel/',
           ]
         },
+      ],
+      '/cloud/docker/': [
         {
-          title: '容器',
+          title: '基础篇',
           children: [
-            'docker/镜像',
-            'docker/Dockerfile',
-            'docker/Compose',
-            'docker/YAML',
+            'base/镜像',
+            'base/Dockerfile',
+            'base/Compose',
+            'base/YAML',
+          ]
+        },
+        {
+          title: '实战篇',
+          children: [
+          ]
+        }
+      ],
+      '/cloud/k8s/': [
+        {
+          title: 'Kubernetes',
+          children: [
           ]
         }
       ],
@@ -275,6 +305,106 @@ module.exports = {
             'mybatisplus/',
           ]
         }
+      ],
+      '/distributed/tranctional/': [
+        {
+          title: '事务',
+          children: [
+          ]
+        },
+        {
+          title: 'Redis事务',
+          children: [
+          ]
+        },
+        {
+          title: 'Mysql事务',
+          children: [
+          ]
+        },
+        {
+          title: 'Spring事务',
+          children: [
+          ]
+        },
+        {
+          title: 'seata',
+          children: [
+            'seata/介绍'
+          ]
+        },
+      ],
+      '/distributed/springcloud/': [
+        {
+          title: '分布式消息',
+          children: [
+          ]
+        },
+        {
+          title: '服务调用',
+          children: [
+          ]
+        },
+        {
+          title: '服务注册和发现',
+          children: [
+          ]
+        },
+        {
+          title: '配置中心',
+          children: [
+          ]
+        },
+        {
+          title: '网关/路由',
+          children: [
+          ]
+        },
+      ],
+      '/distributed/k8s/': [
+        {
+          title: 'K8S',
+          children: [
+          ]
+        }
+      ],
+      '/distributed/servicemesh/': [
+        {
+          title: '服务网格',
+          children: [
+          ]
+        }
+      ],
+      '/cs/': [
+        {
+          title: '网络协议',
+          children: [
+            'network/tcpip',
+            'network/http',
+          ]
+        },
+        {
+          title: '操作系统原理',
+          children: [
+          ]
+        }
+      ],
+      '/distributed/mq/': [
+        {
+          title: 'Redis的队列',
+          children: [
+          ]
+        },
+        {
+          title: 'RabbitMQ',
+          children: [
+          ]
+        },
+        {
+          title: 'Kafka',
+          children: [
+          ]
+        },
       ],
       '/architecture/': [
         {
