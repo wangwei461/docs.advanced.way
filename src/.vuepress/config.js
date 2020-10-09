@@ -258,11 +258,11 @@ module.exports = {
             'spring/IOC',
             'spring/AOP',
             'spring/core',
-            'spring/spring源码分析',
             'spring/事务管理',
             'spring/BeanFactory',
             'spring/BeanDefinition',
             'spring/spring启动流程',
+            'spring/问题',
           ]
         },
         {
