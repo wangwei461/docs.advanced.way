@@ -240,7 +240,8 @@ module.exports = {
             'redis/数据类型',
             'redis/数据结构',
             'redis/持久化',
-            'redis/事务',
+            'redis/复制',
+            'redis/集群',
             'redis/Sentinel',
             'redis/常见问题',
           ]
@@ -492,7 +493,11 @@ module.exports = {
           title: 'Java开发',
           children: [
             'java',
+            'jvm',
             'mybatis',
+            'mysql',
+            'redis',
+            'rabbitmq',
           ]
         },
       ]
