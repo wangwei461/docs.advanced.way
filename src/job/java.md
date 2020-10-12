@@ -445,3 +445,33 @@ SPI：SPI是框架接口规范，需要框架开发人员实现
 
 IO: 面向字节流 阻塞
 NIO : 面向缓冲区 基于Selector的非阻塞
+
+### java 动态代理
+
+#### JDK动态代理
+通过java反射机制实现动态代理。
+
+有两个重要的类或接口，一个是 InvocationHandler (Interface)、另一个则是 Proxy(Class)
+每一个动态代理类都必须要实现 InvocationHandler 这个接口，当通过代理对象调用一个方法的时候，
+这个方法的调用就会被转发为由 InvocationHandler 这个接口的 invoke 方法来进行调用
+
+Proxy 用来动态创建一个代理对象的类 `Proxy.newProxyInstance`
+
+利用反射机制生成一个实现代理接口的匿名类，在调用具体方法前调用InvokeHandler来处理
+
+#### cglib动态代理
+
+CGLIB 动态代理生成代理类的子类，并且实现了 Factory 接口
+底层利用asm，对代理对象类的class文件加载进来，通过修改其字节码生成子类来处理，调用方法就直接调用，不需要再通过反射的方式调用
+
+DK动态代理和CGLIB字节码生成的区别？
+ （1）JDK动态代理只能对实现了接口的类生成代理，而不能针对类
+ （2）CGLIB是针对类实现代理，主要是对指定的类生成一个子类，覆盖其中的方法
+   因为是继承，所以该类或方法最好不要声明成 final
+
+#### springboot 代理
+
+Spring Boot 2.0 开始代理类默认的实现方式是 cglib
+
+如果想使用 JDK 动态代理，可以通过
+spring.aop.proxy-target-class=false
