@@ -15,3 +15,7 @@ ulimit -n可以查看一个进程最多可以打开多少文件描述符数
 ### linux系统查看端口限值范围
 
 cat /proc/sys/net/ipv4/ip_local_port_range
+
+### 查看端口占用
+
+netstat

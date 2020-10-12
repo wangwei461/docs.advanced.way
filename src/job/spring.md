@@ -4,9 +4,7 @@ title: 'Spring 面试题'
 
 ## Spring
 
-## Spring/Spring MVC
-
-为什么要使用 spring？
+### 为什么要使用 spring？
 
 * spring 提供 ioc 技术，容器会帮你管理依赖的对象，从而不需要自己创建和管理依赖对象了，更轻松的实现了程序的解耦。
 * spring 提供了事务支持，使得事务操作变的更加方便。
@@ -147,6 +145,14 @@ spring 有五大隔离级别，默认值为 ISOLATION_DEFAULT（使用数据库�
 
 在默认设置下，事务只在出现运行时异常（runtime exception）时回滚，而在出现受检查异常（checked exception）时不回滚
 
+#### 实现原理
+
+利用了动态代理
+
+Spring在检查到 @Transactional注解之后，给这个对象生成了一个代理对象proxy
+
+代理对象的method，会先开启事务（beginTransaction），然后再去执行原先对象target的method，如果抛异常，则回滚（rollBack），如果一切顺利，则提交（commit）
+
 ## Spring MVC
 
 ### 说一下 spring mvc 运行流程？
@@ -175,7 +181,7 @@ Dispathcher 查询一个或多个 ViewResolver 视图解析器，找到 ModelAnd
 
 @Autowired 它可以对类成员变量、方法及构造函数进行标注，完成自动装配的工作，通过@Autowired 的使用来消除 set/get 方法。
 
-Spring Boot/Spring Cloud
+## Spring Boot
 
 ### 什么是 spring boot？
 
@@ -190,6 +196,17 @@ spring boot 是为 spring 服务的，是用来简化新 spring 应用的初始�
 提供应用监控
 易上手
 提升开发效率
+
+### spring boot 启动原理
+
+### spring boot 生命周期
+
+### spring boot starters
+
+1. starter 命名 ，引入依赖;
+2. 编写自动配置类，用来初始化相关的 bean ;
+3. 指明自动配置类的配置文件 spring.factories ;
+4. 功能模块
 
 ### spring boot 核心配置文件是什么？
 
@@ -211,6 +228,10 @@ spring:
     RabbitMQ:
         port: 5672
 . yml 格式不支持 @PropertySource 注解导入。
+
+### @PostConstruct
+
+被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行，并且只会被服务器执行一次
 
 ### spring boot 有哪些方式可以实现热部署？
 
@@ -280,4 +301,4 @@ BeanFactory在启动的时候不会去实例化Bean，当有从容器中拿Bean�
 
 ApplicationContext：
 
-ApplicationContext在启动的时候就把所有的Bean全部实例化了。它还可以为Bean配置lazy-init=true来让Bean延迟实例化； 
+ApplicationContext在启动的时候就把所有的Bean全部实例化了。它还可以为Bean配置lazy-init=true来让Bean延迟实例化；
