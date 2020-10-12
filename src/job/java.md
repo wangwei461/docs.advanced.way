@@ -358,6 +358,34 @@ atomic 主要利用 CAS (Compare And Wwap) 和 volatile 和 native 方法来保�
 
 JDK 原生动态代理和 cglib 动态代理。JDK 原生动态代理是基于接口实现的，而 cglib 是基于继承当前类的子类实现的
 
+#### JDK动态代理
+通过java反射机制实现动态代理。
+
+有两个重要的类或接口，一个是 InvocationHandler (Interface)、另一个则是 Proxy(Class)
+每一个动态代理类都必须要实现 InvocationHandler 这个接口，当通过代理对象调用一个方法的时候，
+这个方法的调用就会被转发为由 InvocationHandler 这个接口的 invoke 方法来进行调用
+
+Proxy 用来动态创建一个代理对象的类 `Proxy.newProxyInstance`
+
+利用反射机制生成一个实现代理接口的匿名类，在调用具体方法前调用InvokeHandler来处理
+
+#### cglib动态代理
+
+CGLIB 动态代理生成代理类的子类，并且实现了 Factory 接口
+底层利用asm，对代理对象类的class文件加载进来，通过修改其字节码生成子类来处理，调用方法就直接调用，不需要再通过反射的方式调用
+
+DK动态代理和CGLIB字节码生成的区别？
+ （1）JDK动态代理只能对实现了接口的类生成代理，而不能针对类
+ （2）CGLIB是针对类实现代理，主要是对指定的类生成一个子类，覆盖其中的方法
+   因为是继承，所以该类或方法最好不要声明成 final
+
+#### springboot 代理
+
+Spring Boot 2.0 开始代理类默认的实现方式是 cglib
+
+如果想使用 JDK 动态代理，可以通过
+spring.aop.proxy-target-class=false
+
 ## 对象拷贝
 
 ### 为什么要使用克隆？
@@ -446,32 +474,49 @@ SPI：SPI是框架接口规范，需要框架开发人员实现
 IO: 面向字节流 阻塞
 NIO : 面向缓冲区 基于Selector的非阻塞
 
-### java 动态代理
+### JDK 常用工具
 
-#### JDK动态代理
-通过java反射机制实现动态代理。
+1. javac 
+编译java文件
 
-有两个重要的类或接口，一个是 InvocationHandler (Interface)、另一个则是 Proxy(Class)
-每一个动态代理类都必须要实现 InvocationHandler 这个接口，当通过代理对象调用一个方法的时候，
-这个方法的调用就会被转发为由 InvocationHandler 这个接口的 invoke 方法来进行调用
+2. javap
 
-Proxy 用来动态创建一个代理对象的类 `Proxy.newProxyInstance`
+javap -c a.class
 
-利用反射机制生成一个实现代理接口的匿名类，在调用具体方法前调用InvokeHandler来处理
+对给定的class文件提供的字节代码进行反编译
 
-#### cglib动态代理
+3. jps
 
-CGLIB 动态代理生成代理类的子类，并且实现了 Factory 接口
-底层利用asm，对代理对象类的class文件加载进来，通过修改其字节码生成子类来处理，调用方法就直接调用，不需要再通过反射的方式调用
+显示当前系统的java进程情况及进程id
 
-DK动态代理和CGLIB字节码生成的区别？
- （1）JDK动态代理只能对实现了接口的类生成代理，而不能针对类
- （2）CGLIB是针对类实现代理，主要是对指定的类生成一个子类，覆盖其中的方法
-   因为是继承，所以该类或方法最好不要声明成 final
+4. jmap
 
-#### springboot 代理
+可以输出所有内存中对象的工具，甚至可以将VM 中的heap，以二进制输出成文本
 
-Spring Boot 2.0 开始代理类默认的实现方式是 cglib
+jmap -dump:live,format=b,file=myjmapfile.txt 19570
 
-如果想使用 JDK 动态代理，可以通过
-spring.aop.proxy-target-class=false
+5. jstack
+
+查看某个Java进程内的线程堆栈信息
+
+步骤:
+jps 查看java进程pid
+top -Hp pid 找出该进程内最耗费CPU的线程
+printf "%x\n" 1787 得到十六进制值为6fb
+jstack pid > file.log 通过jstack 把该进程的所有线程堆栈打印到file.log中
+
+### ThreadLocal 原理
+
+线程本地变量，每个线程都有变量的副本
+Entry类继承了WeakReference<ThreadLocal<?>>，即每个Entry对象都有一个ThreadLocal的弱引用（作为key），这是为了防止内存泄露
+
+多小程序账号访问
+
+### 引用类型
+
+垃圾回收机制在判断是否回收某个对象的时候
+
+* 强引用 垃圾回收器将永远不会回收被引用的对象 new 创建
+* 软引用 在内存足够的时候，软引用对象不会被回收，只有在内存不足时，系统则会回收软引用对象
+* 弱引用 无论内存是否足够，只要 JVM 开始进行垃圾回收，那些被弱引用关联的对象都会被回收
+* 虚引用 如果一个对象仅持有虚引用，那么它就和没有任何引用一样，它随时可能会被回收
