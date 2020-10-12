@@ -498,6 +498,11 @@ module.exports = {
             'mysql',
             'redis',
             'rabbitmq',
+            'spring',
+            'linux',
+            '网络协议',
+            '分布式',
+            '算法',
           ]
         },
       ]
