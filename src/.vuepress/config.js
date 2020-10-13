@@ -147,9 +147,9 @@ module.exports = {
       {
         title: '高并发',
         children: [
+          'hc/高并发',
           'hc/多线程',
           'hc/并发编程的艺术',
-          'hc/高并发',
           'hc/内存模型',
           'hc/原子类',
           'hc/并发容器',
