@@ -19,3 +19,11 @@ cat /proc/sys/net/ipv4/ip_local_port_range
 ### 查看端口占用
 
 netstat
+
+### 打印文件行数
+
+head 和 tail 通过管道组合
+
+```shell
+head -30 a.txt | tail -11
+```
