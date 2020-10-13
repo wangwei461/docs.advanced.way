@@ -322,3 +322,9 @@ ApplicationContext在启动的时候就把所有的Bean全部实例化了。它�
 ### synchronized与ReentrantLock性能对比
 
 synchronized的性能确实要比ReentrantLock差个20%-30%
+
+### spring bean 实例化
+
+* 普通构造方法创建
+* 静态工厂创建
+* 实例工厂创建
