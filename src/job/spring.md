@@ -302,3 +302,9 @@ BeanFactory在启动的时候不会去实例化Bean，当有从容器中拿Bean�
 ApplicationContext：
 
 ApplicationContext在启动的时候就把所有的Bean全部实例化了。它还可以为Bean配置lazy-init=true来让Bean延迟实例化；
+
+
+### spring的IOC容器比New对象究竟好在哪
+
+1. 资源集中管理，实现资源的可配置和易管理
+2. 解耦合

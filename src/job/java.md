@@ -135,6 +135,31 @@ String str="i"的方式，Java 虚拟机会将其分配到常量池中；
 * 线程安全：Hashtable 是线程安全的，而 HashMap 是非线程安全的。
 * 推荐使用：在 Hashtable 的类注释可以看到，Hashtable 是保留类不建议使用，推荐在单线程环境下使用 HashMap 替代，如果需要多线程使用则用 ConcurrentHashMap 替代
 
+### Hashmap的结构，1.7和1.8有哪些区别
+
+1. JDK1.7用的是头插法，而JDK1.8及之后使用的都是尾插法
+2. JDK1.7的时候使用的是数组+ 单链表的数据结构。但是在JDK1.8及之后时，使用的是数组+链表+红黑树的数据结构
+3. 1.7 先扩容再put jdk8 先put再扩容
+4. 计算hash运算多 jdk8 计算hash运算少，受rehash影响 jdk8 调整后是(原位置)or(原位置+旧容量)
+
+### ConCurrentHashMap在1.7和1.8区别
+
+7
+* Segment + HashEntry + Unsafe 分段处理
+* put() 先定位Segment，再定位桶，put全程加锁
+* size() 计算两次，如果不变则返回计算结果，若不一致，则锁住所有的Segment求和
+
+8
+* 移除Segment，使锁的粒度更小，Synchronized + CAS + Node + Unsafe
+* put() 直接定位到桶，拿到first节点后进行判断，1、为空则CAS插入；2、为-1则说明在扩容，则跟着一起扩容 3 put
+* size() baseCount来存储当前的节点个数
+
+### 扩容2的倍数
+
+`(n-1)&h`
+
+(n-1)的二进制是01111, 与添加元素的hash值进行位运算时，能够充分的散列，同时也提升了效率
+
 ### 如何决定使用 HashMap 还是 TreeMap？
 
 对于在 Map 中插入、删除、定位一个元素这类操作，HashMap 是最好的选择，因为相对而言 HashMap 的插入会更快，但如果你要对一个 key 集合进行有序的遍历，那 TreeMap 是更好的选择
@@ -181,6 +206,12 @@ Iterator 接口提供遍历任何 Collection 的接口。我们可以从一个 C
 Collections. unmodifiableCollection(Collection c) 方法来创建一个只读集合
 
 ## 多线程
+
+### 线程安全
+
+通过同步机制保证各个线程都可以正常且正确的执行，不会出现数据污染等意外情况
+
+### 并行、并发
 
 * 并行：多个处理器或多核处理器同时处理多个任务。
 * 并发：多个任务在同一个 CPU 核上，按细分的时间片轮流(交替)执行，从逻辑上来看那些任务是同时执行。
