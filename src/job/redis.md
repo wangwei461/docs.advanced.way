@@ -20,6 +20,40 @@ Redis 使用场景：
 支持事务
 支持消息队列
 
+### redis 数据结构
+
+#### string
+最大 512m
+
+* int 8字节
+* emstr 小于等于39
+* raw 大于39
+
+#### list
+* ziplist
+* linkedlist
+
+list-max-ziplist-entries=512
+list-max-ziplist-value=64
+
+#### hash
+
+* ziplist
+* hashtable
+
+#### set
+
+* intset
+* hashtable
+
+#### zset
+
+* ziplist
+* skiplist
+
+zset-max-ziplist-entries=128
+zset-max-ziplist-value=65
+
 ### Redis 和 memcache 有什么区别？
 
 存储方式不同：memcache 把数据全部存在内存之中，断电后会挂掉，数据不能超过内存大小；Redis 有部份存在硬盘上，这样能保证数据的持久性。
@@ -133,8 +167,8 @@ JVM
 
 方法四: 用redis自带命令
 
-(1) monitor命令，该命令可以实时抓取出redis服务器接收到的命令，然后写代码统计出热key是啥。当然，也有现成的分析工具可以给你使用，比如redis-faina。但是该命令在高并发的条件下，有内存增暴增的隐患，还会降低redis的性能。
-(2) hotkeys参数，redis 4.0.3提供了redis-cli的热点key发现功能，执行redis-cli时加上–hotkeys选项即可。但是该参数在执行的时候，如果key比较多，执行起来比较慢
+1. monitor命令，该命令可以实时抓取出redis服务器接收到的命令，然后写代码统计出热key是啥。当然，也有现成的分析工具可以给你使用，比如redis-faina。但是该命令在高并发的条件下，有内存增暴增的隐患，还会降低redis的性能。
+2. hotkeys参数，redis 4.0.3提供了redis-cli的热点key发现功能，执行redis-cli时加上 `–hotkeys` 选项即可。但是该参数在执行的时候，如果key比较多，执行起来比较慢
 
 #### 解决
 

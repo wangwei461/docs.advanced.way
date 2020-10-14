@@ -524,34 +524,42 @@ NIO : 面向缓冲区 基于Selector的非阻塞
 
 ### JDK 常用工具
 
-1. javac 
+#### javac 
 编译java文件
 
-2. javap
+#### javap
 
 javap -c a.class
 
 对给定的class文件提供的字节代码进行反编译
 
-3. jps
+#### jps
 
 显示当前系统的java进程情况及进程id
 
-4. jmap
+#### jmap
 
 可以输出所有内存中对象的工具，甚至可以将VM 中的heap，以二进制输出成文本
 
 jmap -dump:live,format=b,file=myjmapfile.txt 19570
 
-5. jstack
+#### jstack
 
 查看某个Java进程内的线程堆栈信息
 
 步骤:
-jps 查看java进程pid
-top -Hp pid 找出该进程内最耗费CPU的线程
-printf "%x\n" 1787 得到十六进制值为6fb
-jstack pid > file.log 通过jstack 把该进程的所有线程堆栈打印到file.log中
+1. jps 查看java进程pid
+2. top -Hp pid 找出该进程内最耗费CPU的线程
+3. printf "%x\n" 1787 得到十六进制值为6fb
+4. jstack pid > file.log 通过jstack 把该进程的所有线程堆栈打印到file.log中
+
+#### jconsole
+
+用于对 JVM 中的内存、线程和类等进行监控；
+
+#### jvisualvm
+
+JDK 自带的全能分析工具，可以分析：内存快照、线程快照、程序死锁、监控内存的变化、gc 变化等。
 
 ### ThreadLocal 原理
 
@@ -604,3 +612,15 @@ constructor.setAccessible(true); // 获取对私用构造函数访问权
 * shutdown 只是将线程池的状态设置为SHUTWDOWN状态，正在执行的任务会继续执行下去，没有被执行的则中断
 
 * shutdown now 则是将线程池的状态设置为STOP，正在执行的任务则被停止，没被执行任务的则返回
+
+### volatile与可见性
+
+可见性就是指可见性是指当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值
+
+1. Lock前缀指令会引起处理器缓存会写到内存
+
+当对volatile变量进行写操作的时候，JVM会向处理器发送一条lock前缀的指令，将这个缓存中的变量回写到系统主存中
+
+2. 一个处理器的缓存回写到内存会导致其他处理器的缓存失效
+
+处理器使用嗅探技术保证内部缓存 系统内存和其他处理器的缓存的数据在总线上保持一致

@@ -27,12 +27,12 @@ ioc：Inversionof Control（中文：控制反转）是 spring 的核心，对�
 
 ### spring 有哪些主要模块？
 
-spring core：框架的最基础部分，提供 ioc 和依赖注入特性。
-spring context：构建于 core 封装包基础上的 context 封装包，提供了一种框架式的对象访问方法。
-spring dao：Data Access Object 提供了JDBC的抽象层。
-spring aop：提供了面向切面的编程实现，让你可以自定义拦截器、切点等。
-spring Web：提供了针对 Web 开发的集成特性，例如文件上传，利用 servlet listeners 进行 ioc 容器初始化和针对 Web 的 ApplicationContext。
-spring Web mvc：spring 中的 mvc 封装包提供了 Web 应用的 Model-View-Controller（MVC）的实现。
+* spring core：框架的最基础部分，提供 ioc 和依赖注入特性。
+* spring context：构建于 core 封装包基础上的 context 封装包，提供了一种框架式的对象访问方法。
+* spring dao：Data Access Object 提供了JDBC的抽象层。
+* spring aop：提供了面向切面的编程实现，让你可以自定义拦截器、切点等。
+* spring Web：提供了针对 Web 开发的集成特性，例如文件上传，利用 servlet listeners 进行 ioc 容器初始化和针对 Web 的 ApplicationContext。
+* spring Web mvc：spring 中的 mvc 封装包提供了 Web 应用的 Model-View-Controller（MVC）的实现。
 
 ### spring 常用的注入方式有哪些？
 
@@ -48,20 +48,20 @@ spring 中的 bean 默认是单例模式，spring 框架并没有对单例 bean 
 
 ### spring 支持几种 bean 的作用域？
 
-singleton：spring ioc 容器中只存在一个 bean 实例，bean 以单例模式存在，是系统默认值；
-prototype：每次从容器调用 bean 时都会创建一个新的示例，既每次 getBean()相当于执行 new Bean()操作；
+* singleton：spring ioc 容器中只存在一个 bean 实例，bean 以单例模式存在，是系统默认值；
+* prototype：每次从容器调用 bean 时都会创建一个新的示例，既每次 getBean()相当于执行 new Bean()操作；
 
 Web 环境下的作用域：
-request：每次 http 请求都会创建一个 bean；
-session：同一个 http session 共享一个 bean 实例；
+* request：每次 http 请求都会创建一个 bean；
+* session：同一个 http session 共享一个 bean 实例；
 
 ### spring 自动装配 bean 有哪些方式？
 
-no：默认值，表示没有自动装配，应使用显式 bean 引用进行装配。
-byName：它根据 bean 的名称注入对象依赖项。
-byType：它根据类型注入对象依赖项。
-构造函数：通过构造函数来注入依赖项，需要设置大量的参数。
-autodetect：容器首先通过构造函数使用 autowire 装配，如果不能，则通过 byType 自动装配。
+* no：默认值，表示没有自动装配，应使用显式 bean 引用进行装配。
+* byName：它根据 bean 的名称注入对象依赖项。
+* byType：它根据类型注入对象依赖项。
+* 构造函数：通过构造函数来注入依赖项，需要设置大量的参数。
+* autodetect：容器首先通过构造函数使用 autowire 装配，如果不能，则通过 byType 自动装配。
 
 ### spring 的事务
 
@@ -157,11 +157,11 @@ Spring在检查到 @Transactional注解之后，给这个对象生成了一个�
 
 ### 说一下 spring mvc 运行流程？
 
-spring mvc 先将请求发送给 DispatcherServlet。
-DispatcherServlet 查询一个或多个 HandlerMapping，找到处理请求的 Controller。
-DispatcherServlet 再把请求提交到对应的 Controller。
-Controller 进行业务逻辑处理后，会返回一个ModelAndView。
-Dispathcher 查询一个或多个 ViewResolver 视图解析器，找到 ModelAndView 对象指定的视图对象。
+* spring mvc 先将请求发送给 DispatcherServlet。
+* DispatcherServlet 查询一个或多个 HandlerMapping，找到处理请求的 Controller。
+* DispatcherServlet 再把请求提交到对应的 Controller。
+* Controller 进行业务逻辑处理后，会返回一个ModelAndView。
+* Dispathcher 查询一个或多个 ViewResolver 视图解析器，找到 ModelAndView 对象指定的视图对象。
 视图对象负责渲染返回给客户端。
 
 
