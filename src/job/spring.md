@@ -328,3 +328,44 @@ synchronized的性能确实要比ReentrantLock差个20%-30%
 * 普通构造方法创建
 * 静态工厂创建
 * 实例工厂创建
+
+### spring boot actuator
+
+actuator是spring boot提供的对应用系统的自省和监控的集成功能，可以对应用系统进行配置查看、相关功能统计等
+
+* 查看自动配置的使用情况
+* 查看配置属性，包括默认配置
+* 打印线程栈
+* 查看所有url映射
+* 关闭应用
+* 查看基本追踪信息
+* 查看应用健康指标
+
+### springboot 原理
+
+1. 提供了统一依赖管理，将相应的依赖放入一个文件，使用时自动引入依赖。满足
+2. 提供了自动配置模式
+
+在springboot 主类上声明的注解 SpringBootApplication， 注解中有 @SpringBootConfiguration @ComponentScan @EnableAutoConfiguration
+
+@SpringBootConfiguration 使用java配置代替xml配置。@ComponentScan 将标注java注解的类注入到spring容器中
+
+@EnableAutoConfiguration 注解包含两个注解 @AutoConfigurationPackage @Import(AutoConfigurationImportSelector.class)
+
+@AutoConfigurationPackage 是将当期包作为扫描的基础包。 通过 @Import 导入 AutoConfigurationImportSelector 类并注入到容重中
+
+AutoConfigurationImportSelector类 会加载 mate-inf 目录下 spring.factories 文件配置的自动配置类。然后根据 @Conditional 注解开启条件配置功能。
+
+是基于SPI技术的一种实现方式。 这样就完成了springboot 的约定大于配置的模式
+
+
+### spring boot run 过程
+
+1. 初始化 springapplicationrunlistenning 事件，并执行strarting,使用事件机制来广播启动的过程
+2. 初始化环境变量
+3. 打印控制台字符
+4. 准备异常报告器
+5. 准备刷新上下文、刷新上下文、刷新上下文结束
+6. 调用Runner类
+
+
