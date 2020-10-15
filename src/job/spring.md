@@ -369,3 +369,15 @@ AutoConfigurationImportSelector类 会加载 mate-inf 目录下 spring.factories
 6. 调用Runner类
 
 
+
+### spring 的设计模式
+
+1. 简单工厂模式
+2. 工厂方法模式
+3. 单例模式
+4. 适配器模式
+5. 包装器模式
+6. 代理模式
+7. 观察者模式
+8. 策略模式
+9. 模板方法模式
