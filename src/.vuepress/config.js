@@ -61,14 +61,6 @@ module.exports = {
                 text: '架构设计',
                 link: '/architecture/'
               },
-              {
-                text: '开发模式',
-                link: '/dev'
-              },
-              {
-                text: '集群',
-                link: '/cluster'
-              }
             ]
           },
           {
