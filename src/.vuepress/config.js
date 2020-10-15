@@ -318,25 +318,14 @@ module.exports = {
         {
           title: '事务',
           children: [
+            '简介',
+            'spring事务',
+            'mysql事务',
+            'redis事务',
           ]
         },
         {
-          title: 'Redis事务',
-          children: [
-          ]
-        },
-        {
-          title: 'Mysql事务',
-          children: [
-          ]
-        },
-        {
-          title: 'Spring事务',
-          children: [
-          ]
-        },
-        {
-          title: 'seata',
+          title: '分布式事务',
           children: [
             'seata/介绍'
           ]
