@@ -471,7 +471,7 @@ module.exports = {
       ],
       '/job/': [
         {
-          title: 'Java开发',
+          title: 'Java 后端开发',
           children: [
             'java',
             'jvm',
