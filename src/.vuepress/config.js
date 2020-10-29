@@ -332,6 +332,7 @@ module.exports = {
         {
           title: '服务调用',
           children: [
+            'feign'
           ]
         },
         {
