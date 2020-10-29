@@ -210,3 +210,9 @@ b+树，层数越多，数据量指数级增长
 * like 以通配符开头（‘%abc...’）mysql索引失效会变成全表扫描的操作
 * 字符串不加单引号索引失效
 * 少用or，用它来连接时索引会失效
+
+### 慢日志
+如何打开慢查询 ： SET GLOBAL slow_query_log = ON;
+将默认时间改为1S： SET GLOBAL long_query_time = 1;
+
+cat /var/log/mysql/slow.log
