@@ -381,3 +381,11 @@ AutoConfigurationImportSelector类 会加载 mate-inf 目录下 spring.factories
 7. 观察者模式
 8. 策略模式
 9. 模板方法模式
+
+### Spring中为什么默认是单例
+
+1. 减少了新生成实例的消耗
+
+2. 减少jvm垃圾回收
+
+3. 可以快速获取到bean

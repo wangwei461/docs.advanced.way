@@ -204,3 +204,17 @@ select和poll都需要在返回后，通过遍历文件描述符来获取已经�
 * epoll
 
 相对于select和poll来说，epoll更加灵活，没有描述符限制。epoll使用一个文件描述符管理多个描述符
+
+### Redis集群选举原理
+
+1. slave发现自己的master变为FAIL
+
+2. 将自己记录的集群currentEpoch加1，并广播FAILOVER_AUTH_REQUEST 信息
+
+3. 其他所有redis集群节点收到该信息，只有master会进行响应，判断请求者的合法性，并发送FAILOVER_AUTH_ACK，对每一个epoch只发送一次ack
+
+4. 尝试failover的slave收集FAILOVER_AUTH_ACK
+
+5. 如果slave收集的FAILOVER_AUTH_ACK数量超过集群中master数量总数的一半后将变成新Master
+
+6. 广播Pong通知其他集群节点
