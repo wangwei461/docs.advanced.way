@@ -24,6 +24,10 @@ title: 'JAVA 面试题'
 
 线程安全: StringBuffer
 
+都继承 `AbstractStringBuilder`
+
+`byte[] value`, append 方法调用父类的`AbstractStringBuilder`方法
+
 ### String str="i" 与 String str=new String("i")一样吗？
 
 不一样，因为内存的分配方式不一样。
@@ -211,6 +215,10 @@ HashSet 是基于 HashMap 实现的，HashSet 底层使用 HashMap 来保存所�
 ### 迭代器 Iterator 是什么？
 
 Iterator 接口提供遍历任何 Collection 的接口。我们可以从一个 Collection 中使用迭代器方法来获取迭代器实例。迭代器取代了 Java 集合框架中的 Enumeration，迭代器允许调用者在迭代过程中移除元素
+
+### 边读边删除
+
+使用 Iterator的 remove()方法
 
 ### Iterator 和 ListIterator 有什么区别？
 
