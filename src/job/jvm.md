@@ -241,6 +241,16 @@ G1重新定义了堆空间，打破了原有的分代模型，将堆划分为一
 * 最终标记（Final Marking）：是为了修正并发标记期间因用户程序继续运作而导致标记产生变动的那一部分标记记录，虚拟机将这段时间对象变化记录在线程Remembered Set Logs里面，最终标记阶段需要把Remembered Set Logs的数据合并到Remembered Set中，这阶段需要停顿线程，但是可并行执行。
 * 筛选回收（Live Data Counting and Evacuation
 
+
+cms: 标记清除+并发算法
+g1: 标记-复制+增量算法+并发算法
+
+新生代收集器：Serial、ParNew、Parallel Scavenge
+
+老年代收集器：CMS、Serial Old、Parallel Old
+
+整堆收集器： G1
+
 ### jvm 大对象
 
 1. 对于一个大对象，我们会首先在Eden 尝试创建，如果创建不了，就会触发Minor GC
@@ -306,4 +316,6 @@ CommonClassLoader\CatalinaClassLoader\SharedClassLoader\WebAppClassLoader
 Web应用项目包之间相互隔离，避免库相互依赖和应用包相互影响。比如：在一个端口配置两个应用包，这两个应用包之间除了某些三方依赖包版本不一样外，其他都一样。这时如果采用同一个类加载器，会不会出问题？答案是肯定的（包的三方依赖包会被覆盖，而导致其中一个应用无法正常启动）
 
 2. 灵活性
+
+
 

@@ -298,3 +298,37 @@ SELECT * FROM tbl WHERE b=1
 ### 什么是索引覆盖?
 
 索引覆盖: 通过普通索引查询的时候,不需要回表查询,直接可以获取到对应的数据
+
+### MySQL事务隔离级别的实现原理
+
+MVCC(多版本并发控制)和锁
+
+MVCC
+在InnoDB中，给每行增加两个隐藏字段来实现MVCC，一个用来记录数据行的创建时间，另一个用来记录行的过期时间（删除时间）。在实际操作中，存储的并不是时间，而是事务的版本号，每开启一个新事务，事务的版本号就会递增
+
+锁
+Shared Locks(共享锁/S锁)
+Exclusive Locks(排它锁/X锁)
+Gap Locks(间隙锁)
+Next-Key Locks(间隙锁)
+行锁 表锁
+
+select ... for update: 会加排它锁
+insert、delete和update都是会加排它锁(Exclusive Locks)的
+
+```sql
+select @@transaction_isolation;
+```
+
+set global/session transaction isolation level read committed;
+
+REPEATABLE READ
+READ COMMITTED
+READ UNCOMMITTED
+SERIALIZABLE
+
+my.ini
+
+[mysqld]
+transaction-isolation = REPEATABLE-READ
+transaction-read-only = OFF
