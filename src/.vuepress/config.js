@@ -381,6 +381,13 @@ module.exports = {
       ],
       '/distributed/mq/': [
         {
+          title: 'JMS',
+          children: [
+            'jms',
+            '事件驱动模型'
+          ]
+        },
+        {
           title: 'Redis的队列',
           children: [
           ]
