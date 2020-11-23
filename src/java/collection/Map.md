@@ -527,6 +527,12 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 }
 ```
 
+### hash 
+
+`tab[i = (n - 1) & hash]` 用来定位桶位置
+
+`(n - 1) & hash` 位运算得到的值小于 (n-1)
+
 ### 为什么会hash冲突
 
 就是根据key即经过一个函数f(key)得到的结果的作为地址去存放当前的key，value键值对(这个是hashmap的存值方式)，但是却发现算出来的地址上已经有数据。
@@ -583,6 +589,41 @@ public class LinkedHashMap<K,V>
     transient LinkedHashMap.Entry<K,V> tail;
     // 表示迭代顺序，true表示访问顺序，false表示插入顺序
     final boolean accessOrder;
+}
+```
+
+#### put 方法
+
+LinkedHashMap 没有重写put方法，所以还是调用HashMap得到put方法
+
+```java
+
+// HashMap.class
+public V put(K key, V value) {
+    return putVal(hash(key), key, value, false, true);
+}
+
+final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+                boolean evict) {
+    ...
+    afterNodeInsertion(evict);
+    return null;
+}
+
+void afterNodeInsertion(boolean evict) { }
+
+
+// LinkedHashMap.class
+void afterNodeInsertion(boolean evict) { // possibly remove eldest
+    LinkedHashMap.Entry<K,V> first;
+    if (evict && (first = head) != null && removeEldestEntry(first)) {
+        K key = first.key;
+        removeNode(hash(key), key, null, false, true);
+    }
+}
+
+protected boolean removeEldestEntry(Map.Entry<K,V> eldest) {
+    return false;
 }
 ```
 

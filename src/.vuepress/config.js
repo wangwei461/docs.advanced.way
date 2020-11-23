@@ -126,6 +126,7 @@ module.exports = {
           'base/反射',
           'base/String',
           'base/Reference',
+          'base/base64',
         ]
       },
       {
@@ -226,6 +227,11 @@ module.exports = {
       ],
       '/cache/': [
         {
+          title: '缓存',
+          children: [
+            'cache/cache-strategies',
+          ]
+        }, {
           title: 'Redis',
           children: [
             'redis/概述',
