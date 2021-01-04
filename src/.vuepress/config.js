@@ -401,6 +401,7 @@ module.exports = {
         {
           title: 'ActiveMQ',
           children: [
+            'active/架构'
           ]
         },
         {
