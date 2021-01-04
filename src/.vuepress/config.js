@@ -277,6 +277,11 @@ module.exports = {
           ]
         },
         {
+          title: 'Spring JMS',
+          children: [
+          ]
+        },
+        {
           title: 'Spring Boot',
           children: [
             'springboot/简介',
@@ -389,8 +394,13 @@ module.exports = {
         {
           title: 'JMS',
           children: [
-            'jms',
-            '事件驱动模型'
+            'jms/jms',
+            'jms/事件驱动模型'
+          ]
+        },
+        {
+          title: 'ActiveMQ',
+          children: [
           ]
         },
         {

@@ -1,5 +1,5 @@
 ---
-title: 'JMS'
+title: 'JMS API'
 ---
 
 ## 简介
@@ -10,7 +10,7 @@ JMS（Java Messaging Service）是Java平台上有关面向消息中间件(MOM)�
 
 ### 对象模型
 
-![img](../../resources/distributed/adaf2edda3cc7cd92cd7d9313901213fb90e9164.gif)
+![img](../../../resources/distributed/adaf2edda3cc7cd92cd7d9313901213fb90e9164.gif)
 
 ### 消息类型
 
@@ -24,7 +24,7 @@ JMS（Java Messaging Service）是Java平台上有关面向消息中间件(MOM)�
 
 ### 核心 API
 
-![img](../../resources/distributed/v2-9476d5828b90519f30f1f65d282e738e_1440w.jpg)
+![img](../../../resources/distributed/v2-9476d5828b90519f30f1f65d282e738e_1440w.jpg)
 
 ### message 结构
 
