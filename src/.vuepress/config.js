@@ -49,41 +49,28 @@ module.exports = {
         items: [
           { text: 'Spring', link: '/framework/spring/' },
           { text: 'Mybatis', link: '/framework/mybatis/' },
+          { text: '权限管理', link: '/framework/auth/' },
         ]
       },
       {
-        text: '分布式/架构',
+        text: '中间件',
         items: [
           {
-            text: '架构师之路',
-            items: [
-              {
-                text: '架构设计',
-                link: '/architecture/'
-              },
-            ]
+            text: '分布式',
+            link: '/middleware/distributed/'
           },
           {
-            text: '分布式',
-            items: [
-              {
-                text: '事务',
-                link: '/distributed/tranctional/'
-              },
-              {
-                text: 'SpringCloud',
-                link: '/distributed/springcloud/'
-              },
-              {
-                text: '服务网格',
-                link: '/distributed/servicemesh/'
-              },
-              {
-                text: '消息队列',
-                link: '/distributed/mq/'
-              }
-            ],
+            text: '事务',
+            link: '/middleware/tranctional/'
           },
+          {
+            text: '服务网格',
+            link: '/middleware/servicemesh/'
+          },
+          {
+            text: '消息队列',
+            link: '/middleware/mq/'
+          }
         ]
       },
       {
@@ -107,6 +94,10 @@ module.exports = {
         items: [
           { text: '算法/数据结构', link: '/algorithm/' },
           { text: '设计模式', link: '/patterns/' },
+          {
+            text: '架构设计',
+            link: '/architecture/'
+          },
           { text: '面试', link: '/job/' },
         ]
       },
@@ -317,7 +308,19 @@ module.exports = {
           ]
         }
       ],
-      '/distributed/tranctional/': [
+      '/framework/auth/': [
+        {
+          title: 'Auth2.0',
+          children: [
+          ]
+        },
+        {
+          title: 'Shiro',
+          children: [
+          ]
+        },
+      ],
+      '/middleware/tranctional/': [
         {
           title: '事务',
           children: [
@@ -334,63 +337,34 @@ module.exports = {
           ]
         },
       ],
-      '/distributed/springcloud/': [
+      '/middleware/distributed/': [
         {
-          title: '分布式消息',
-          children: [
-          ]
-        },
-        {
-          title: '服务调用',
+          title: 'Spring Cloud',
           children: [
             'feign'
           ]
         },
         {
-          title: '服务注册和发现',
+          title: 'Dubbo',
           children: [
           ]
-        },
-        {
-          title: '配置中心',
-          children: [
-          ]
-        },
-        {
-          title: '网关/路由',
-          children: [
-          ]
-        },
+        }
       ],
-      '/distributed/k8s/': [
+      '/middleware/k8s/': [
         {
           title: 'K8S',
           children: [
           ]
         }
       ],
-      '/distributed/servicemesh/': [
+      '/middleware/servicemesh/': [
         {
           title: '服务网格',
           children: [
           ]
         }
       ],
-      '/cs/': [
-        {
-          title: '网络协议',
-          children: [
-            'network/tcpip',
-            'network/http',
-          ]
-        },
-        {
-          title: '操作系统原理',
-          children: [
-          ]
-        }
-      ],
-      '/distributed/mq/': [
+      '/middleware/mq/': [
         {
           title: 'JMS',
           children: [
@@ -419,6 +393,20 @@ module.exports = {
           children: [
           ]
         },
+      ],
+      '/cs/': [
+        {
+          title: '网络协议',
+          children: [
+            'network/tcpip',
+            'network/http',
+          ]
+        },
+        {
+          title: '操作系统原理',
+          children: [
+          ]
+        }
       ],
       '/architecture/': [
         {
