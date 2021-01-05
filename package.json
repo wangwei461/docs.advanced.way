@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
-    "deploy": "vuepress build src && gh-pages -d dist"
+    "deploy": "vuepress build src && gh-pages -d dist",
+    "clean": "rm -fr ./dist"
   },
   "license": "MIT",
   "devDependencies": {
