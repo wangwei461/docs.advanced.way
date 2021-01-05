@@ -341,7 +341,7 @@ module.exports = {
         {
           title: 'Spring Cloud',
           children: [
-            'feign'
+            'springcloud/feign'
           ]
         },
         {
