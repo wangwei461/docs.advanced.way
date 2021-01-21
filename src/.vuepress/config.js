@@ -35,10 +35,10 @@ module.exports = {
     editLinkText: '在 GitHub 编辑此页',
     displayAllHeaders: true,
     smoothScroll: true,
-    search: false,
+    search: true,
     sidebarDepth: 0,
-    lastUpdated: false,
-    // lastUpdated: '最后更新时间',
+    lastUpdated: true,
+    lastUpdated: '最后更新时间',
     nav: [
       {
         text: 'Java',
@@ -78,6 +78,7 @@ module.exports = {
         items: [
           { text: 'Docker容器', link: '/cloud/docker/' },
           { text: 'Kubernetes', link: '/cloud/k8s/' },
+          { text: 'Serverless', link: '/cloud/serverless/' },
         ]
       },
       {
@@ -197,6 +198,8 @@ module.exports = {
           ]
         }
       ],
+      '/cloud/serverless/': [
+      ],
       '/db/': [
         {
           title: 'SQL',
@@ -254,6 +257,8 @@ module.exports = {
             'spring/BeanDefinition',
             'spring/spring启动流程',
             'spring/问题',
+            'spring/importbean',
+            'spring/getbean'
           ]
         },
         {
@@ -312,6 +317,7 @@ module.exports = {
         {
           title: 'Auth2.0',
           children: [
+            'oauth2'
           ]
         },
         {
@@ -511,13 +517,17 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
-    // '@vuepress/last-updated',
-    // {
-    //   transformer: (timestamp, lang) => {
-    //     moment.locale('zh-CN')
-    //     return moment(timestamp).format('lll');
-    //   }
-    // },
+    '@vuepress/plugin-last-updated',
+    {
+      transformer: (timestamp, lang) => {
+        const moment = require('moment')
+        moment.locale('zh-CN')
+        return moment(timestamp).format('lll');
+      },
+      dateOptions: {
+        hour12: false
+      }
+    },
   ],
   markdown: {
     extendMarkdown: md => {
