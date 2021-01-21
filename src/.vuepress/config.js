@@ -345,6 +345,12 @@ module.exports = {
       ],
       '/middleware/distributed/': [
         {
+          title: '组件',
+          children: [
+            'module/consul'
+          ]
+        },
+        {
           title: 'Spring Cloud',
           children: [
             'springcloud/feign'
