@@ -100,6 +100,7 @@ module.exports = {
             link: '/architecture/'
           },
           { text: '面试', link: '/job/' },
+          { text: '备忘', link: '/memo/' },
         ]
       },
     ],
@@ -513,6 +514,24 @@ module.exports = {
             '面经',
           ]
         },
+      ],
+      '/memo/': [
+        {
+          title: '软件安装',
+          children: [
+            'tool/系统初始化',
+            'tool/sublime',
+            'tool/idea',
+          ]
+        },
+        {
+          title: '使用教程',
+          children: [
+            'course/maven',
+            'course/git',
+            'course/docker',
+          ]
+        }
       ]
     }
   },
