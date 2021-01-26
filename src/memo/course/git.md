@@ -185,3 +185,10 @@ git push v.1.0.1 origin v.1.0.1
 ### IDE
 
 <<< @/src/memo/course/Idea.gitignore
+
+
+## 链接
+
+* [git-flow 备忘清单](http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html)
+* [Git Commit Log的小型团队最佳实践](https://segmentfault.com/a/1190000015434246)
+* [git flow的使用](https://www.cnblogs.com/lcngu/p/5770288.html)
