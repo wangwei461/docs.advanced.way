@@ -297,7 +297,6 @@ module.exports = {
         {
           title: 'Mybatis',
           children: [
-            'mybatis/入门',
             'mybatis/配置',
             'mybatis/核心组件',
             'mybatis/映射器',
