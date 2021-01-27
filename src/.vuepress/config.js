@@ -103,6 +103,12 @@ module.exports = {
           { text: '备忘', link: '/memo/' },
         ]
       },
+      {
+        text: '随记课堂',
+        items: [
+          { text: '课堂笔记', link: '/classnotes/' },
+        ]
+      }
     ],
     sidebar: {
       '/java/': [{
@@ -303,9 +309,8 @@ module.exports = {
             'mybatis/动态 SQL',
             'mybatis/Cache',
             'mybatis/插件',
-            'mybatis/代码生成器',
-            'mybatis/springboot_mybatis',
             'mybatis/扩展',
+            'mybatis/代码生成器',
           ]
         },
         {
@@ -533,7 +538,22 @@ module.exports = {
             'course/docker',
           ]
         }
-      ]
+      ],
+      '/classnotes/': [
+        {
+          title: '法律常识',
+          children: [
+            'law/',
+          ]
+        },
+        {
+          title: '云课堂',
+          children: [
+            'notes/dingding'
+          ]
+        },
+
+      ],
     }
   },
 
