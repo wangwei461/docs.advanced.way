@@ -10,3 +10,5 @@ Linux的发行版说简单点就是将Linux内核与应用软件做一个打包�
 
 > 目前市面上较知名的发行版有：Ubuntu、RedHat、CentOS、Debian、Fedora、SuSE、OpenSUSE、Arch Linux、SolusOS 等
 
+
+

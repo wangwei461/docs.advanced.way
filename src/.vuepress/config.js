@@ -161,6 +161,7 @@ module.exports = {
           children: [
             'command/常用命令',
             'command/lvm',
+            'command/soft',
           ]
         },
         {
