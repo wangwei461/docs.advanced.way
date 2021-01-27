@@ -306,6 +306,7 @@ module.exports = {
             'mybatis/插件',
             'mybatis/代码生成器',
             'mybatis/springboot_mybatis',
+            'mybatis/扩展',
           ]
         },
         {
