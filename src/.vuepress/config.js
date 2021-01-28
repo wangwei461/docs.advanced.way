@@ -543,7 +543,6 @@ module.exports = {
         {
           title: '法律常识',
           children: [
-            'law/',
           ]
         },
         {
