@@ -104,9 +104,10 @@ module.exports = {
         ]
       },
       {
-        text: '随记课堂',
+        text: '小百科',
         items: [
-          { text: '课堂笔记', link: '/classnotes/' },
+          { text: '课堂笔记', link: '/cyclopedia/classnotes/' },
+          { text: '大中国🇨🇳', link: '/cyclopedia/chinese/' },
         ]
       }
     ],
@@ -539,7 +540,7 @@ module.exports = {
           ]
         }
       ],
-      '/classnotes/': [
+      '/cyclopedia/classnotes/': [
         {
           title: '法律常识',
           children: [
@@ -551,8 +552,16 @@ module.exports = {
             'notes/dingding'
           ]
         },
-
       ],
+      '/cyclopedia/chinese/': [
+        {
+          title: '语文',
+          children: [
+            'lan/idiom',
+            'noun/economics'
+          ]
+        },
+      ]
     }
   },
 
