@@ -41,7 +41,7 @@ module.exports = {
     lastUpdated: '最后更新时间',
     nav: [
       {
-        text: 'Java',
+        text: '☕️Java',
         link: '/java/',
       },
       {
