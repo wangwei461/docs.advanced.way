@@ -584,6 +584,7 @@ module.exports = {
     },
   ],
   markdown: {
+    lineNumbers: true,
     extendMarkdown: md => {
     }
   }

@@ -8,7 +8,7 @@
 
 ### 🔨 开发/部署
 
-```shell script
+```shell
 npm run dev
 npm run build
 npm run deploy
