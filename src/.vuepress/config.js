@@ -571,6 +571,8 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
+    'flowchart',
+    ['vuepress-plugin-code-copy', true],
     '@vuepress/plugin-last-updated',
     {
       transformer: (timestamp, lang) => {
