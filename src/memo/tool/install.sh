@@ -22,7 +22,7 @@
 # curl -s "https://get.sdkman.io" | bash
 
 # echo '***** brew 命令执行 *****'
-# brew install git gh tree htop git-flow-avh redis node wget 
+
 
 # echo '安装系统增强软件'
 # brew install --cask iterm2 alfred appcleaner sogouinput motrix \
