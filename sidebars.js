@@ -96,5 +96,136 @@ module.exports = {
       'framework/auth/oauth2'
     ],
     'Shiro': []
+  },
+  chinese: {
+    语文: [
+      'cyclopedia/chinese/lan/idiom',
+      'cyclopedia/chinese/noun/economics'
+    ]
+  },
+  classnotes: {
+    法律常识: [],
+    云课堂: [
+      'cyclopedia/classnotes/notes/dingding'
+    ]
+  },
+  memo: {
+    软件安装: [
+      'memo/tool/系统初始化',
+      'memo/tool/sublime',
+      'memo/tool/idea',
+    ],
+    使用教程: [
+      'memo/course/maven',
+      'memo/course/git',
+      'memo/course/docker',
+    ]
+  },
+  job: {
+    'Java后端开发': [
+      'job/java',
+      'job/jvm',
+      'job/mybatis',
+      'job/mysql',
+      'job/redis',
+      'job/rabbitmq',
+      'job/spring',
+      'job/linux',
+      'job/网络协议',
+      'job/分布式',
+      'job/算法',
+      'job/服务器',
+      'job/面经',
+    ]
+  },
+  patterns: {
+    设计模式: [
+      'patterns/other/设计模式原则',
+    ],
+    创建型模式: [
+      'patterns/build/单利模式',
+      'patterns/build/工厂模式',
+      'patterns/build/建造者模式',
+      'patterns/build/原型模式',
+    ],
+    结构型模式: [
+      'patterns/structured/亨元模式',
+      'patterns/structured/代理模式',
+      'patterns/structured/外观模式',
+      'patterns/structured/桥接模式',
+      'patterns/structured/组合模式',
+      'patterns/structured/装饰模式',
+      'patterns/structured/适配器模式',
+    ],
+    行为型模式: [
+      'patterns/behavior/中介者模式',
+      'patterns/behavior/命令模式',
+      'patterns/behavior/备忘录模式',
+      'patterns/behavior/模板方法模式',
+      'patterns/behavior/状态模式',
+      'patterns/behavior/策略模式',
+      'patterns/behavior/职责链模式',
+      'patterns/behavior/观察者模式',
+      'patterns/behavior/解释器模式',
+      'patterns/behavior/访问者模式',
+      'patterns/behavior/迭代器模式',
+    ],
+  },
+  algorithm: {
+    算法: [
+      'algorithm/algorithm/README',
+    ],
+    数据结构: [
+      'algorithm/structure/tree/树',
+      'algorithm/structure/queue/队列',
+    ],
+    leetcode: [
+      'algorithm/leetcode/README',
+    ]
+  },
+  cs: {
+    网络协议: [
+      'cs/network/tcpip',
+      'cs/network/http',
+    ],
+    操作系统原理: []
+  },
+  mq: {
+    JMS: [
+      'middleware/mq/jms/jms',
+      'middleware/mq/jms/事件驱动模型'
+    ],
+    ActiveMQ: [
+      'middleware/mq/active/架构'
+    ],
+    Redis的队列: [],
+    Kafka: [],
+    RabbitMQ: [],
+  },
+  distributed: {
+    组件: [
+      'middleware/distributed/module/consul'
+    ],
+    SpringCloud: [
+      'middleware/distributed/springcloud/feign'
+    ],
+    Dubbo: [],
+  },
+  k8s: {
+    K8S: []
+  },
+  servicemesh: {
+    服务网格: []
+  },
+  tranctional: {
+    事务: [
+      'middleware/tranctional/简介',
+      'middleware/tranctional/spring事务',
+      'middleware/tranctional/mysql事务',
+      'middleware/tranctional/redis事务',
+    ],
+    分布式事务: [
+      'middleware/tranctional/seata/介绍'
+    ]
   }
 };

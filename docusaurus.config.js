@@ -121,7 +121,7 @@ module.exports = {
           items: [
             {
               label: '算法/数据结构',
-              to: 'docs/framework/spring/'
+              to: 'docs/algorithm/algorithm/'
             },
             {
               label: '设计模式',
@@ -147,11 +147,11 @@ module.exports = {
           items: [
             {
               label: '课堂笔记',
-              to: 'docs/framework/spring/'
+              to: 'docs/cyclopedia/chinese/notes/dingding/'
             },
             {
               label: '大中国',
-              to: 'docs/framework/spring/'
+              to: 'docs/cyclopedia/chinese/lan/idiom/'
             },
           ]
         },
