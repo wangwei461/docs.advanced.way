@@ -53,6 +53,108 @@ module.exports = {
             }
           ]
         },
+        {
+          label: '中间件',
+          position: 'left',
+          items: [
+            {
+              label: '分布式',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: '事务',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: '服务网格',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: '消息队列',
+              to: 'docs/framework/spring/'
+            },
+          ]
+        },
+        {
+          label: '云原生',
+          position: 'left',
+          items: [
+            {
+              label: 'Docker容器',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: 'K8s',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: 'Serverless',
+              to: 'docs/framework/spring/'
+            },
+          ]
+        },
+        {
+          label: '服务器',
+          position: 'left',
+          items: [
+            {
+              label: 'Linux',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: '缓存',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: '数据库',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: '计算机系统',
+              to: 'docs/framework/spring/'
+            },
+          ]
+        },
+        {
+          label: '编码实践',
+          position: 'left',
+          items: [
+            {
+              label: '算法/数据结构',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: '设计模式',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: '架构设计',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: '面试',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: '备忘',
+              to: 'docs/framework/spring/'
+            },
+          ]
+        },
+        {
+          label: '小百科',
+          position: 'left',
+          items: [
+            {
+              label: '课堂笔记',
+              to: 'docs/framework/spring/'
+            },
+            {
+              label: '大中国',
+              to: 'docs/framework/spring/'
+            },
+          ]
+        },
         { to: 'blog', label: '博客', position: 'right' },
         {
           href: 'https://github.com/wangwei461/docs.advanced.way.git',
