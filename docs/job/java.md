@@ -1,5 +1,6 @@
 ---
 title: 'JAVA 面试题'
+slug: /job/java/
 ---
 
 ## 基础篇

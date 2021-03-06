@@ -140,6 +140,7 @@ module.exports = {
   },
   patterns: {
     设计模式: [
+      'patterns/README',
       'patterns/other/设计模式原则',
     ],
     创建型模式: [

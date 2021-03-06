@@ -125,19 +125,19 @@ module.exports = {
             },
             {
               label: '设计模式',
-              to: 'docs/framework/spring/'
+              to: 'docs/patterns/'
             },
             {
               label: '架构设计',
-              to: 'docs/framework/spring/'
+              to: 'docs/architecture/'
             },
             {
               label: '面试',
-              to: 'docs/framework/spring/'
+              to: 'docs/job/java/'
             },
             {
               label: '备忘',
-              to: 'docs/framework/spring/'
+              to: 'docs/memo/tool/系统初始化/'
             },
           ]
         },
