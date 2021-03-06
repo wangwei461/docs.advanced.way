@@ -31,10 +31,9 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'right',
+          to: 'docs/java/',
+          label: 'Java',
+          position: 'left',
         },
         {
           type: 'docsVersionDropdown',
