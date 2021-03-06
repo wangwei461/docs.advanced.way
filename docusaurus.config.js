@@ -36,6 +36,16 @@ module.exports = {
           position: 'left',
         },
         {
+          label: '常用框架',
+          position: 'left',
+          items: [
+            {
+              label: '常用框架',
+              to: 'docs/framework/spring/'
+            }
+          ]
+        },
+        {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownActiveClassDisabled: true,

@@ -1,5 +1,6 @@
 ---
 title: 'Spring'
+slug: /framework/spring/
 ---
 
 ## Spring 设计理念

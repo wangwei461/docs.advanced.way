@@ -30,13 +30,48 @@ module.exports = {
       'java/hc/线程池',
       'java/hc/锁'
     ],
-    'JVM': [
+    JVM: [
       'java/jvm/对象创建过程',
       'java/jvm/对象回收机制',
       'java/jvm/jvm参数',
       'java/jvm/jvm内存模型',
       'java/jvm/内存优化',
       'java/jvm/垃圾收集器',
+    ]
+  },
+  spring: {
+    Spring: [
+      'framework/spring/README',
+      'framework/spring/spring/IOC',
+      'framework/spring/spring/AOP',
+      'framework/spring/spring/core',
+      'framework/spring/spring/事务管理',
+      'framework/spring/spring/BeanFactory',
+      'framework/spring/spring/BeanDefinition',
+      'framework/spring/spring/spring启动流程',
+      'framework/spring/spring/问题',
+      'framework/spring/spring/importbean',
+      'framework/spring/spring/getbean'
+    ]
+    ,
+    SpringMVC: [
+      'framework/spring/springmvc/简介',
+      'framework/spring/springmvc/核心组件',
+      'framework/spring/springmvc/Servlet',
+      'framework/spring/springmvc/Session',
+      'framework/spring/springmvc/DispatcherServlet',
+      'framework/spring/springmvc/RequestMapping',
+    ],
+    SpringJMS: [],
+    SpringBoot: [
+      'framework/spring/springboot/简介',
+      'framework/spring/springboot/起步依赖',
+      'framework/spring/springboot/自动配置',
+      'framework/spring/springboot/系统指标监控',
+      'framework/spring/springboot/spi',
+      'framework/spring/springboot/springboot启动',
+      'framework/spring/springboot/常用注解',
+      'framework/spring/springboot/基本特性',
     ]
   }
 };
