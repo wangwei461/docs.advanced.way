@@ -212,12 +212,6 @@ module.exports = {
     ],
     Dubbo: [],
   },
-  k8s: {
-    K8S: []
-  },
-  servicemesh: {
-    服务网格: []
-  },
   tranctional: {
     事务: [
       'middleware/tranctional/简介',
@@ -228,5 +222,67 @@ module.exports = {
     分布式事务: [
       'middleware/tranctional/seata/介绍'
     ]
-  }
+  },
+  db: {
+    SQL: [
+      'db/sql/README',
+    ],
+    Mysql: [
+      'db/mysql/mysql',
+      'db/mysql/数据类型',
+      'db/mysql/数据库索引',
+      'db/mysql/InnoDB',
+      'db/mysql/复制',
+      'db/mysql/性能优化',
+    ]
+  },
+  cache: {
+    缓存: [
+      'cache/cache/cache-strategies',
+    ],
+    Redis: [
+      'cache/redis/概述',
+      'cache/redis/数据类型',
+      'cache/redis/数据结构',
+      'cache/redis/持久化',
+      'cache/redis/复制',
+      'cache/redis/集群',
+      'cache/redis/Sentinel',
+      'cache/redis/常见问题',
+    ],
+    Redisson: [
+      'cache/redisson/README',
+    ]
+  },
+  linux: {
+    Linux: [
+      'linux/command/常用命令',
+      'linux/command/lvm',
+      'linux/command/soft',
+    ],
+    Shell编程: [
+      'linux/shell/Shell',
+    ],
+    内核: [
+      'linux/kernel/README',
+    ]
+  },
+  docker: {
+    基础篇: [
+      'cloud/docker/base/镜像',
+      'cloud/docker/base/Dockerfile',
+      'cloud/docker/base/Compose',
+      'cloud/docker/base/YAML',
+    ],
+    实战篇: []
+  },
+  k8s: {
+    K8S: [
+      'cloud/k8s/README',
+    ]
+  },
+  servicemesh: {
+    服务网格: []
+  },
+  serverless: {},
 };

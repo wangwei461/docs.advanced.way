@@ -1,5 +1,6 @@
 ---
 title: 'Linux'
+slug: /linux/
 ---
 
 ## Linux

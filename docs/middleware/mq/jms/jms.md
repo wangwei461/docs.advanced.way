@@ -1,5 +1,6 @@
 ---
 title: 'JMS API'
+slug: /mq/
 ---
 
 ## 简介

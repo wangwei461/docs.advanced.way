@@ -1,5 +1,6 @@
 ---
 title: 'TCP/IP'
+slug: /cs/network/tcpip
 ---
 
 ## 建立连接

@@ -1,5 +1,6 @@
 ---
 title: "分布式介绍"
+slug: /distributed/
 ---
 
 ## 分布式简介
