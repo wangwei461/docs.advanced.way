@@ -1,8 +1,8 @@
 module.exports = {
   title: '进阶之路',
   tagline: '',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://wangwei461.github.io',
+  baseUrl: '/docs.advanced.way/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
