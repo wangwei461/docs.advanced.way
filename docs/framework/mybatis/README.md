@@ -1,3 +1,8 @@
+---
+title: '11'
+slug: /framework/mybatis/
+---
+
 ## 简介
 
 MyBatis 是一款优秀的持久层框架，一个半 ORM（对象关系映射）框架，它支持定制化 SQL、存储过程以及高级映射

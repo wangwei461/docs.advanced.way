@@ -73,5 +73,28 @@ module.exports = {
       'framework/spring/springboot/常用注解',
       'framework/spring/springboot/基本特性',
     ]
+  },
+  Mybatis: {
+    Mybatis: [
+      'framework/mybatis/README',
+      'framework/mybatis/mybatis/配置',
+      'framework/mybatis/mybatis/核心组件',
+      'framework/mybatis/mybatis/映射器',
+      'framework/mybatis/mybatis/动态 SQL',
+      'framework/mybatis/mybatis/Cache',
+      'framework/mybatis/mybatis/插件',
+      'framework/mybatis/mybatis/扩展',
+      'framework/mybatis/mybatis/代码生成器',
+    ],
+    MybatisPlus: [
+      'framework/mybatis/mybatisplus/README',
+    ]
+  },
+  auth: {
+    'Auth2.0': [
+      'framework/auth/readme',
+      'framework/auth/oauth2'
+    ],
+    'Shiro': []
   }
 };

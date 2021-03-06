@@ -42,19 +42,16 @@ module.exports = {
             {
               label: '常用框架',
               to: 'docs/framework/spring/'
+            },
+            {
+              label: 'Mybatis',
+              to: 'docs/framework/mybatis/'
+            },
+            {
+              label: '权限管理',
+              to: 'docs/framework/auth/'
             }
           ]
-        },
-        {
-          type: 'docsVersionDropdown',
-          position: 'right',
-          dropdownActiveClassDisabled: true,
-          dropdownItemsAfter: [
-            {
-              to: '/versions',
-              label: 'All versions',
-            },
-          ],
         },
         { to: 'blog', label: '博客', position: 'right' },
         {
