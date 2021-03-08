@@ -9,7 +9,7 @@ module.exports = {
   organizationName: 'wangwei461', // Usually your GitHub org/user name.
   projectName: 'docs.advanced.way', // Usually your repo name.
   themeConfig: {
-    hideableSidebar: true,
+    // hideableSidebar: false,
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
